@@ -1,0 +1,31 @@
+h1.igo-header {
+  font-size: 52px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: #005596;
+  text-align: center;
+  padding-bottom: 4px;
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.row-balance {
+  margin-bottom: 10px;
+}
+
+.card-balance .card-box span.value {
+  color: #005495;
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.card-box span.heading {
+  color: #a1a1a1 !important;
+}
+
+.card-box span.title {
+  color: #a1a1a1 !important;
+  display: flex;
+  justify-content: center;
+}
