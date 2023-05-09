@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import "./App.css";
 import HeaderComponent from "./components/headerComponent";
@@ -21,8 +21,9 @@ function App() {
         <div className="col-6">
           <Routes>
             <Route path="/" element={<MainPage />}></Route>
-            <Route path="/activate" element={<ActivateCard />}></Route>
-            <Route path="/balance" element={<CheckBalance />}></Route>
+            <Route path="activate" element={<ActivateCard />}></Route>
+            <Route path="balance" element={<CheckBalance />}></Route>
+            <Route path="*" element={<Navigate to="/" />}></Route>
           </Routes>
         </div>
       </div>
