@@ -13,13 +13,13 @@ function Menu() {
       >
         Home
       </button>
-      <button
+      {/* <button
         className="btn btn-sm btn-primary"
         type="button"
         onClick={() => navigate("/activate")}
       >
         Activate Your Card
-      </button>
+      </button> */}
       <button
         className="btn btn-sm btn-primary"
         type="button"

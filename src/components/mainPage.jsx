@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 
 import "./mainPage.css";
+import athelete_card from "../images/WWC_AUNZ_Athlete_F-R1.jpg";
+import pink_trophy_card from "../images/WWC_AUNZ_Trophy_A-R1.jpg";
 
 function MainPage() {
   const fetchData = async () => {
@@ -43,7 +45,6 @@ function MainPage() {
 
   useEffect(() => {
     const script = document.createElement("script");
-    script.type = "text/javascript";
     script.src = "https://uat.truerewards.com.au/widget/js/init-widget.js";
     script.async = true;
     document.head.appendChild(script);
@@ -55,26 +56,25 @@ function MainPage() {
 
   return (
     <div>
-      <div
-        id="tr-rewards-widget-holder"
-        data-widget-type="widget"
-        data-access-type="store"
-      ></div>
-      <div>
+      <div className="row">
         <a id="card" className="my-2 tr-widget-load-btn">
           <img
             className="rounded-top rounded-bottom my-2"
-            src="https://s3-ap-southeast-2.amazonaws.com/cashrewards.prod.hub-pages/Images/gift-cards/amazon-gift-card.jpg"
+            src={athelete_card}
           ></img>
         </a>
         <a className="my-2 tr-widget-load-btn">
           <img
             className="rounded-top rounded-bottom"
-            src="https://s3-ap-southeast-2.amazonaws.com/cashrewards.prod.hub-pages/Images/gift-cards/ebay-gift-card.jpg"
+            src={pink_trophy_card}
           ></img>
         </a>
-        <a className="tr-widget-load-btn">Grab your rewards here</a>
       </div>
+      <div
+        id="tr-rewards-widget-holder"
+        data-widget-type="widget"
+        data-access-type="store"
+      ></div>
     </div>
   );
 }
