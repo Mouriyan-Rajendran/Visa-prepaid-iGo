@@ -29,6 +29,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "publicUrl": "https://visaprepaid.azurewebsites.net/",
   "eslintConfig": {
     "extends": [
       "react-app",
