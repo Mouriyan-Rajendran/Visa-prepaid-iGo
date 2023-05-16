@@ -1,22 +1,16 @@
 import axios from "axios";
-
+const balanceApiUrl = process.env.REACT_APP_INDIGO_API;
 const apiService = {
   getBalance: async (data) => {
-    const response = await axios.get(
-      "http://localhost:9003/Umbraco/Api/Activation/PublicGetVisaCardBalance",
-      {
-        params: {
-          cardNumber: data.cardNumber,
-        },
-      }
-    );
+    const response = await axios.get(balanceApiUrl, {
+      params: {
+        cardNumber: data.cardNumber,
+      },
+    });
     return response.data;
   },
   postBalance: async (data) => {
-    const resp = await axios.post(
-      "http://localhost:9003/Umbraco/Api/Activation/PublicCheckCardBalance",
-      data
-    );
+    const resp = await axios.post(balanceApiUrl, data);
     return resp;
   },
 };

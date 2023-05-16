@@ -14,17 +14,19 @@ function App() {
       <div className="row">
         <HeaderComponent />
       </div>
-      <div className="row my-2">
-        <div className="col-6">
-          <Menu />
-        </div>
-        <div className="col-6">
-          <Routes>
-            <Route path="/" element={<MainPage />}></Route>
-            <Route path="activate" element={<ActivateCard />}></Route>
-            <Route path="balance" element={<CheckBalance />}></Route>
-            <Route path="*" element={<Navigate to="/" />}></Route>
-          </Routes>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <Menu />
+          </div>
+          <div className="col-9">
+            <Routes>
+              <Route path="/" element={<MainPage />}></Route>
+              <Route path="activate" element={<ActivateCard />}></Route>
+              <Route path="balance" element={<CheckBalance />}></Route>
+              <Route path="*" element={<Navigate to="/" />}></Route>
+            </Routes>
+          </div>
         </div>
       </div>
     </div>
