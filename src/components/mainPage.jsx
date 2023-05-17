@@ -58,50 +58,6 @@ function MainPage() {
       document.head.removeChild(script);
     };
   }, []);
-
-  // return (
-  //   <div className="container">
-  //     <div className="row text-center">
-  //       <div className="col-sm">
-  //         <a id="card" className="my-2 tr-widget-load-btn">
-  //           <img
-  //             className="rounded-top rounded-bottom my-2"
-  //             src={athelete_card}
-  //           ></img>
-  //         </a>
-  //       </div>
-  //       <div className="col-sm">
-  //         <a className="my-2 tr-widget-load-btn">
-  //           <img
-  //             className="rounded-top rounded-bottom"
-  //             src={pink_trophy_card}
-  //           ></img>
-  //         </a>
-  //       </div>
-  //       <div className="col-sm">
-  //         <a className="my-2 tr-widget-load-btn">
-  //           <img
-  //             className="rounded-top rounded-bottom"
-  //             src={bird_runner_card}
-  //           ></img>
-  //         </a>
-  //       </div>
-  //       <div className="col-sm">
-  //         <a className="my-2 tr-widget-load-btn">
-  //           <img
-  //             className="rounded-top rounded-bottom"
-  //             src={white_football_card}
-  //           ></img>
-  //         </a>
-  //       </div>
-  //       <div
-  //         id="tr-rewards-widget-holder"
-  //         data-widget-type="widget"
-  //         data-access-type="store"
-  //       ></div>
-  //     </div>
-  //   </div>
-  // );
   return (
     <div>
       <div className="album py-5 bg-body-tertiary">
