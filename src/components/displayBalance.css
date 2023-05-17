@@ -29,3 +29,7 @@ h1.igo-header {
   display: flex;
   justify-content: center;
 }
+
+.text-right {
+  text-align: right;
+}

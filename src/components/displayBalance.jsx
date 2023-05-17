@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Pagination from "./pagination";
 import "./displayBalance.css";
 import { paginate } from "../utils/paginate";
@@ -7,7 +6,7 @@ import { paginate } from "../utils/paginate";
 function DisplayBalance(props) {
   const myObject = props.balanceObj;
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 5;
+  const pageSize = 4;
   const [filteredTrans, setFilteredTrans] = useState();
 
   console.log(myObject);
@@ -26,7 +25,11 @@ function DisplayBalance(props) {
     if (myObject?.Transactions) {
       setFilteredTrans(paginate(myObject.Transactions, currentPage, pageSize));
     }
-  }, [currentPage]);
+  }, [currentPage, myObject]);
+
+  const getIndex = (index) => {
+    return pageSize * (currentPage - 1) + index + 1;
+  };
 
   return (
     <div>
@@ -50,12 +53,6 @@ function DisplayBalance(props) {
                     </svg>
                   </span>
                   <span className="value">{myObject.Balance}</span>
-                  <div id="ZeroInformation">
-                    <span className="heading">Spend Expires </span>
-                    <span id="CardSpendExpiryDate" className="spend">
-                      {formatDate(myObject.spendExpiry)}
-                    </span>
-                  </div>
                 </div>
               </h5>
             </div>
@@ -88,12 +85,12 @@ function DisplayBalance(props) {
                 </thead>
                 <tbody>
                   {filteredTrans?.map((t, index) => (
-                    <tr>
-                      <th>{index + 1}</th>
-                      <th>{formatDate(t.Date)}</th>
-                      <th>{t.Text}</th>
-                      <th>{t.POSLocation}</th>
-                      <th>{t.Value}</th>
+                    <tr key={getIndex(index)}>
+                      <td>{getIndex(index)}</td>
+                      <td>{formatDate(t.Date)}</td>
+                      <td>{t.Text}</td>
+                      <td>{t.POSLocation}</td>
+                      <td className="text-right">{t.Value.toFixed(2)}</td>
                     </tr>
                   ))}
                 </tbody>
